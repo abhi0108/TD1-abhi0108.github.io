@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>js proj</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
+
+<style>
+	 .center-align{
+		text-shadow: 30px;
+	}
+
+	#finput{
+		border-radius: 30px;
+		background-color: #f4f4f4;
+	}
+     
+     input{
+     	height: 35px;	
+     }
+
+	input[placeholder] {
+		font-family: cursive;
+	}
+	img{
+		height: 20px;
+	}
+	a{
+		color:blue;
+	}
+	h1
+	{
+		font-weight: bold;
+		text-shadow: 4px 4px grey ;
+	}
+</style>
+
+
+</head>
+<body>
+<div class="container">
+	<h1 class= "center-align">
+		My Contacts
+	</h1>
+	<br>
+	<div class="center-align">
+		
+	 <input  id="finput" type="text " placeholder="search" style="text-align: center;">
+     </div>
+	<ul id="name" class="collection with-header">
+		<br>
+		<b></b>
+		<h5 class="collection-header">A</h5>
+		<li class="collection-item">
+			<img src="https://cdn3.iconfinder.com/data/icons/jetflat-devices/90/009_001_phone_call_answer-2-512.png">
+			<a href="#" onclick="call()">Abhinav</a>
+			<table><tr><td><a href="tel:+91-626-411-7066">Phone:+91 6264117066</a></td></tr></table>
+		</li>
+		<li class="collection-item">
+			<img src="https://cdn3.iconfinder.com/data/icons/jetflat-devices/90/009_001_phone_call_answer-2-512.png">
+			<a href="#">Ayush</a>
+		</li>
+		<li class="collection-item">
+			<span><img src="https://cdn3.iconfinder.com/data/icons/jetflat-devices/90/009_001_phone_call_answer-2-512.png"></span>
+			<a href="#">Arvind</a>
+
+		</li>
+		<li class="collection-item">
+			<img src="https://cdn3.iconfinder.com/data/icons/jetflat-devices/90/009_001_phone_call_answer-2-512.png">
+			<a href="#">Akhil</a>
+		</li>
+		<h5 class="collection-header">B</h5>
+		<li class="collection-item">
+			<img src="https://cdn3.iconfinder.com/data/icons/jetflat-devices/90/009_001_phone_call_answer-2-512.png">
+			<a href="#">Bobby</a>
+		</li>
+		<li class="collection-item">
+			<img src="https://cdn3.iconfinder.com/data/icons/jetflat-devices/90/009_001_phone_call_answer-2-512.png">
+			<a href="#">Bhavya</a>
+		</li>
+		<li class="collection-item">
+			<img src="https://cdn3.iconfinder.com/data/icons/jetflat-devices/90/009_001_phone_call_answer-2-512.png">
+			<a href="#">Bilal</a>
+		</li>
+		<li class="collection-item">
+			<img src="https://cdn3.iconfinder.com/data/icons/jetflat-devices/90/009_001_phone_call_answer-2-512.png">
+			<a href="#">Baror</a>
+		</li>
+		<h5 class="collection-header">C</h5>
+		<li class="collection-item">
+			<img src="https://cdn3.iconfinder.com/data/icons/jetflat-devices/90/009_001_phone_call_answer-2-512.png">
+			<a href="#">Chinmaya</a>
+		</li>
+		<li class="collection-item">
+			<img src="https://cdn3.iconfinder.com/data/icons/jetflat-devices/90/009_001_phone_call_answer-2-512.png">
+			<a href="#">Chaitanya</a>
+		</li>
+		<li class="collection-item">
+			<img src="https://cdn3.iconfinder.com/data/icons/jetflat-devices/90/009_001_phone_call_answer-2-512.png">
+			<a href="#">Cherry</a>
+		</li>
+		<li class="collection-item">
+			<img src="https://cdn3.iconfinder.com/data/icons/jetflat-devices/90/009_001_phone_call_answer-2-512.png">
+			<a href="#">Chatur</a>
+		</li>
+	</ul>
+
+</div>
+
+
+<script>
+	let finput=document.getElementById('finput');
+
+	finput.addEventListener('keyup',fname);
+
+
+	function fname()
+	{
+		let fvalue= document.getElementById('finput').value.toUpperCase();
+		
+		let ul=document.getElementById('name');
+		let li= ul.querySelectorAll('li.collection-item');
+
+
+		for(let i=0; i<li.length;i++)
+		{
+			let a= li[i].getElementsByTagName('a')[0];
+		
+
+		if(a.innerHTML.toUpperCase().indexOf(fvalue) > -1){
+			li[i].style.display='';}
+		else
+		    {
+		    	li[i].style.display='none';
+		    }		
+		}
+	}
+</script>
+</body>
+</html>
+
+
+
+
